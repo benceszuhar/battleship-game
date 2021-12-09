@@ -19,8 +19,8 @@ public class Game {
 
     public Game() {
         players = new Player[]{
-                new Player1("Player1"),
-                new Player2("Player2")
+                new HumanPlayer("Player1"),
+                new AiPlayer("Player2")
         };
         players[0].setSide(players[1]);
         players[1].setSide(players[0]);

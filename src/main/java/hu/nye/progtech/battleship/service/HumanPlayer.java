@@ -6,13 +6,14 @@ import hu.nye.progtech.battleship.model.ShotStatus;
 
 import java.util.Scanner;
 
-public class Player1 extends Player {
+public class HumanPlayer extends Player {
         private static final Scanner scanner = new Scanner(System.in);
         private static final ManualShipArranger SHIP_ARRANGER = new ManualShipArranger();
 
-        public Player1(String name) {
+        public HumanPlayer(String name) {
             super(name);
         }
+
 
         @Override
         public void placeShips(ShipType[] ships) {
