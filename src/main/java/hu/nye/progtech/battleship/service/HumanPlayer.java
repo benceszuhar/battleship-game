@@ -6,6 +6,9 @@ import hu.nye.progtech.battleship.model.ShotStatus;
 
 import java.util.Scanner;
 
+/**
+ * ShotStatus in game.
+ */
 public class HumanPlayer extends Player {
         private static final Scanner scanner = new Scanner(System.in);
         private static final ManualShipArranger SHIP_ARRANGER = new ManualShipArranger();
@@ -14,19 +17,18 @@ public class HumanPlayer extends Player {
             super(name);
         }
 
-
         @Override
         public void placeShips(ShipType[] ships) {
             System.out.println();
             System.out.println(name + ", place your ships on the game field");
-            MapVO = SHIP_ARRANGER.placeShips(ships);
+            mapVO = SHIP_ARRANGER.placeShips(ships);
         }
 
         @Override
         public ShotStatus makeShot() {
             System.out.println(side.getFoggedField());
             System.out.println("---------------------");
-            System.out.println(MapVO);
+            System.out.println(mapVO);
             System.out.println(name + ", it's your turn:");
             return side.shot(getCoordinates().getIndex());
         }

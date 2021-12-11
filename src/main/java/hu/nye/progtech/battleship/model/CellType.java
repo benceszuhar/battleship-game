@@ -1,5 +1,8 @@
 package hu.nye.progtech.battleship.model;
 
+/**
+ * CellType in game.
+ */
 public enum CellType {
     EMPTY('~'),
     SHIP('O'),

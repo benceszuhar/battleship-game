@@ -8,10 +8,12 @@ import java.util.function.IntPredicate;
 import java.util.function.IntUnaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
 import static java.util.Arrays.fill;
 import static java.util.stream.IntStream.range;
 
+/**
+ * Gamemap implementation.
+ */
 public class MapVO {
         public static final int WIDTH = 10;
         public static final int HEIGHT = 10;
@@ -46,6 +48,9 @@ public class MapVO {
                     .allMatch(e -> field[index + e.getValue()] == CellType.EMPTY);
         }
 
+        /**
+        * ShotStatus.
+        */
         public ShotStatus shot(int index) {
             final var isMiss = field[index] == CellType.EMPTY || field[index] == CellType.MISS;
             field[index] = isMiss ? CellType.MISS : CellType.HIT;
@@ -74,15 +79,22 @@ public class MapVO {
         public String getFoggy() {
             return getField(true);
         }
+    /**
+    * Field getter.
+    */
 
-        private String getField(boolean isFog) {
+    private String getField(boolean isFog) {
             return "  1 2 3 4 5 6 7 8 9 10" + range(0, field.length)
                     .mapToObj(i -> String.format(i % 10 > 0 ? " %2$c" : "%n%c %c", 'A' + i / 10,
                             isFog && field[i] == CellType.SHIP ? CellType.EMPTY.getSymbol() : field[i].getSymbol()))
                     .collect(Collectors.joining());
         }
 
-        public class Ship {
+    /**
+     * Ship gets fit,index,sank.
+     */
+
+    public class Ship {
             private final ShipType type;
             private final IntUnaryOperator getIndex;
 

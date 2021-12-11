@@ -2,13 +2,15 @@ package hu.nye.progtech.battleship.service;
 
 import hu.nye.progtech.battleship.model.ShipType;
 import hu.nye.progtech.battleship.model.ShotStatus;
-
 import java.util.Scanner;
-import static java.util.stream.IntStream.range;
+
 import static hu.nye.progtech.battleship.model.ShipType.*;
+import static java.util.stream.IntStream.range;
+
 /**
- * 
+ *  Controlls the flow of the game.
  */
+
 public class Game {
     private static final Scanner scanner = new Scanner(System.in);
     private static final ShipType[] SHIPS_SET = new ShipType[]
@@ -27,6 +29,9 @@ public class Game {
         currentPlayer = 0;
     }
 
+    /**
+     * start order.
+     */
 
     public void start() {
         currentPlayer()

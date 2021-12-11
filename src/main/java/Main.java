@@ -1,8 +1,9 @@
 import hu.nye.progtech.battleship.service.Game;
-
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 /**
  * Entry point of the Battleship game.
  */
+
 public class Main {
     /**
      * Entrypoint of the game.
@@ -10,7 +11,7 @@ public class Main {
      * @param args command line arguments
      */
     public static void main(String[] args) {
-
+        //new AnnotationConfigApplicationContext("hu.nye.progtech.battleship");
         Game game = new Game();
         game.start();
 

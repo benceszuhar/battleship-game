@@ -1,5 +1,8 @@
 package hu.nye.progtech.battleship.model;
 
+/**
+ * ShotStatus in game.
+ */
 public enum ShotStatus {
         MISS("You missed."),
         HIT("You hit a ship!"),

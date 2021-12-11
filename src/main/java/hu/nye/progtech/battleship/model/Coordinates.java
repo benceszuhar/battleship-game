@@ -2,9 +2,11 @@ package hu.nye.progtech.battleship.model;
 
 import java.util.function.IntUnaryOperator;
 import java.util.regex.Pattern;
-
 import static java.text.MessageFormat.format;
 
+/**
+ * Coordinates.
+ */
 public class Coordinates {
     private static final String ROW_PATTERN = format("[A-{0}]", (char) ('A' + MapVO.HEIGHT - 1));
     private static final String COL_PATTERN = "[1-9]|10";

@@ -3,6 +3,9 @@ package hu.nye.progtech.battleship.model;
 import java.util.Optional;
 import java.util.function.IntUnaryOperator;
 
+/**
+ *  ShipCoordinates for placing ships.
+ */
 public class ShipCoordinates {
         private final Coordinates bow;
         private final Coordinates stern;
@@ -13,7 +16,11 @@ public class ShipCoordinates {
             stern = isOrdered ? y : x;
         }
 
-        public static Optional<ShipCoordinates> of(String input) {
+    /**
+     * OptionalShipCoordinates.
+     */
+
+    public static Optional<ShipCoordinates> of(String input) {
             final var coordinates = input.split(" ");
             final var isValid = coordinates.length == 2
                     && Coordinates.isValid(coordinates[0])
@@ -30,17 +37,29 @@ public class ShipCoordinates {
             return Optional.of(new ShipCoordinates(bow, stern));
         }
 
-        boolean isHorizontal() {
+    /**
+     * isHorizontal.
+     */
+
+    boolean isHorizontal() {
             return bow.getRow() == stern.getRow();
         }
 
-        public int length() {
+    /**
+     * Length.
+     */
+
+    public int length() {
             return isHorizontal()
                     ? stern.getCol() - bow.getCol() + 1
                     : stern.getRow() - bow.getRow() + 1;
         }
 
-        public IntUnaryOperator getIndexes() {
+    /**
+     *getIndexes.
+     */
+
+    public IntUnaryOperator getIndexes() {
             return i -> isHorizontal()
                     ? bow.getIndex() + i
                     : bow.getIndex() + MapVO.WIDTH * i;

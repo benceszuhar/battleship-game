@@ -5,9 +5,12 @@ import hu.nye.progtech.battleship.model.MapVO;
 import hu.nye.progtech.battleship.model.ShipType;
 import hu.nye.progtech.battleship.model.ShotStatus;
 
+/**
+ * ShotStatus in game.
+ */
 public abstract class Player {
     protected final String name;
-    protected MapVO MapVO;
+    protected MapVO mapVO;
     protected Player side;
 
     protected Player(String name) {
@@ -20,17 +23,25 @@ public abstract class Player {
         this.side = side;
     }
 
+    /**
+     *getFoggedField.
+     */
+
     public String getFoggedField() {
 
-        return MapVO.getFoggy();
+        return mapVO.getFoggy();
 
     }
 
     public abstract ShotStatus makeShot();
 
+    /**
+     *shot.
+     */
+
     public ShotStatus shot(int index) {
 
-        return MapVO.shot(index);
+        return mapVO.shot(index);
 
     }
 

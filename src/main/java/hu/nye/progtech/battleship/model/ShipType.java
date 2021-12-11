@@ -1,15 +1,18 @@
 package hu.nye.progtech.battleship.model;
 
-
 import java.util.function.IntUnaryOperator;
 import java.util.stream.IntStream;
 
+/**
+ * ShipType names.
+ */
 public enum ShipType {
         AIRCRAFT_CARRIER(5, "Aircraft Carrier"),
         BATTLESHIP(4, "Battleship"),
         SUBMARINE(3, "Submarine"),
         CRUISER(3, "Cruiser"),
         DESTROYER(2, "Destroyer");
+
 
         private final int length;
         private final String name;
@@ -34,7 +37,6 @@ public enum ShipType {
 
         @Override
         public String toString() {
-
             return name;
         }
     }
