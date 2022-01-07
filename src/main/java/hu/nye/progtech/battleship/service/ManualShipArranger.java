@@ -1,12 +1,12 @@
 package hu.nye.progtech.battleship.service;
 
-import hu.nye.progtech.battleship.model.MapVO;
-import hu.nye.progtech.battleship.model.ShipCoordinates;
-import hu.nye.progtech.battleship.model.ShipType;
+import static java.util.Arrays.stream;
 
 import java.util.Scanner;
 
-import static java.util.Arrays.stream;
+import hu.nye.progtech.battleship.model.MapVO;
+import hu.nye.progtech.battleship.model.ShipCoordinates;
+import hu.nye.progtech.battleship.model.ShipType;
 
 /**
  * ShotStatus in game.

@@ -1,5 +1,8 @@
 package hu.nye.progtech.battleship.model;
 
+import static java.util.Arrays.fill;
+import static java.util.stream.IntStream.range;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -8,8 +11,8 @@ import java.util.function.IntPredicate;
 import java.util.function.IntUnaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import static java.util.Arrays.fill;
-import static java.util.stream.IntStream.range;
+
+
 
 /**
  * Gamemap implementation.
@@ -27,6 +30,8 @@ public class MapVO {
                 i -> i / WIDTH < WIDTH - 1 && i % WIDTH > 0, WIDTH - 1,
                 i -> i / WIDTH < WIDTH - 1, WIDTH,
                 i -> i / WIDTH < WIDTH - 1 && i % WIDTH < WIDTH - 1, WIDTH + 1);
+
+
 
         private final CellType[] field;
         private final List<Ship> ships;
@@ -79,9 +84,7 @@ public class MapVO {
         public String getFoggy() {
             return getField(true);
         }
-    /**
-    * Field getter.
-    */
+
 
     private String getField(boolean isFog) {
             return "  1 2 3 4 5 6 7 8 9 10" + range(0, field.length)

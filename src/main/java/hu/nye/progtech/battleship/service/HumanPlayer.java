@@ -1,10 +1,10 @@
 package hu.nye.progtech.battleship.service;
 
+import java.util.Scanner;
+
 import hu.nye.progtech.battleship.model.Coordinates;
 import hu.nye.progtech.battleship.model.ShipType;
 import hu.nye.progtech.battleship.model.ShotStatus;
-
-import java.util.Scanner;
 
 /**
  * ShotStatus in game.

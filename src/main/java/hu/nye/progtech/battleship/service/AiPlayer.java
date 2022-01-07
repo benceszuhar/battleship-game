@@ -3,7 +3,7 @@ package hu.nye.progtech.battleship.service;
 import hu.nye.progtech.battleship.model.ShipType;
 
 /**
- * ShotStatus in game.
+ * AiPlayer implementation.
  */
 public class AiPlayer extends HumanPlayer {
 

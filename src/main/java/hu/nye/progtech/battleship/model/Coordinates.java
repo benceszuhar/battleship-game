@@ -1,8 +1,10 @@
 package hu.nye.progtech.battleship.model;
 
+import static java.text.MessageFormat.format;
+
 import java.util.function.IntUnaryOperator;
 import java.util.regex.Pattern;
-import static java.text.MessageFormat.format;
+
 
 /**
  * Coordinates.

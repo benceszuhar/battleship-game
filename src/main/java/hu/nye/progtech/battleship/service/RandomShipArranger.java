@@ -1,15 +1,14 @@
 package hu.nye.progtech.battleship.service;
 
+import static java.util.Arrays.stream;
+
+import java.util.Random;
+import java.util.Scanner;
+
 import hu.nye.progtech.battleship.model.Coordinates;
 import hu.nye.progtech.battleship.model.MapVO;
 import hu.nye.progtech.battleship.model.ShipCoordinates;
 import hu.nye.progtech.battleship.model.ShipType;
-import java.util.Random;
-import java.util.Scanner;
-
-
-import static java.util.Arrays.stream;
-
 
 /**
  * RandomShipArranger.

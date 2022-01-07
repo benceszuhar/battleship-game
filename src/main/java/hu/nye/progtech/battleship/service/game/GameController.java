@@ -1,25 +1,41 @@
-package hu.nye.progtech.battleship.service;
+package hu.nye.progtech.battleship.service.game;
+
+import static hu.nye.progtech.battleship.model.ShipType.AIRCRAFT_CARRIER;
+import static hu.nye.progtech.battleship.model.ShipType.BATTLESHIP;
+import static hu.nye.progtech.battleship.model.ShipType.CRUISER;
+import static hu.nye.progtech.battleship.model.ShipType.DESTROYER;
+import static hu.nye.progtech.battleship.model.ShipType.SUBMARINE;
+import static java.util.stream.IntStream.range;
+
+import java.util.Scanner;
 
 import hu.nye.progtech.battleship.model.ShipType;
 import hu.nye.progtech.battleship.model.ShotStatus;
-import java.util.Scanner;
+import hu.nye.progtech.battleship.service.AiPlayer;
+import hu.nye.progtech.battleship.service.HumanPlayer;
+import hu.nye.progtech.battleship.service.Player;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import static hu.nye.progtech.battleship.model.ShipType.*;
-import static java.util.stream.IntStream.range;
 
 /**
- *  Controlls the flow of the game.
+ * Component that controls the flow of a game.
  */
+public class GameController {
 
-public class Game {
+    private static final Logger LOGGER = LoggerFactory.getLogger(GameController.class);
+
     private static final Scanner scanner = new Scanner(System.in);
     private static final ShipType[] SHIPS_SET = new ShipType[]
             {AIRCRAFT_CARRIER, BATTLESHIP, SUBMARINE, CRUISER, DESTROYER};
 
     private int currentPlayer;
-    private final Player[] players;
+    private final Player [] players;
+    private final GameStepPerformer gameStepPerformer;
 
-    public Game() {
+    public GameController(GameStepPerformer gameStepPerformer) {
+        this.gameStepPerformer = gameStepPerformer;
+
         players = new Player[]{
                 new HumanPlayer("Player1"),
                 new AiPlayer("Player2")
@@ -50,7 +66,7 @@ public class Game {
             shotStatus = currentPlayer().makeShot();
             System.out.println(shotStatus);
         } while (shotStatus != ShotStatus.ALL);
-
+        gameStepPerformer.performGameStep();
         System.out.println(currentPlayer() + " won the battle!");
     }
 
@@ -70,4 +86,6 @@ public class Game {
     }
 
 }
+
+
 
