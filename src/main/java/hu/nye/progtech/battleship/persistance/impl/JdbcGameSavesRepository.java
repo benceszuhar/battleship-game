@@ -19,12 +19,11 @@ public class JdbcGameSavesRepository implements GameSavesRepository, AutoCloseab
 
     private static final Logger LOGGER = LoggerFactory.getLogger(JdbcGameSavesRepository.class);
 
-    static final String INSERT_STATEMENT = "INSERT INTO game_saves (id, map, fixed) VALUES (1, ?, ?);";
-    static final String DELETE_STATEMENT = "DELETE FROM game_saves WHERE id = 1;";
-    static final String SELECT_STATEMENT = "SELECT * FROM game_saves WHERE id = 1;";
+    static final String INSERT_STATEMENT = "";
+    static final String DELETE_STATEMENT = "";
+    static final String SELECT_STATEMENT = "";
 
-    private Connection connection;
-    private MapToStringUtil mapToStringUtil;
+    private final Connection connection;
 
     public JdbcGameSavesRepository(Connection connection) {
         this.connection = connection;
@@ -39,8 +38,6 @@ public class JdbcGameSavesRepository implements GameSavesRepository, AutoCloseab
     public MapVO load() {
         return null;
     }
-
-
 
     @Override
     public void close() throws Exception {

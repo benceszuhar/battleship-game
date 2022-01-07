@@ -36,9 +36,10 @@ public class GameController {
     public GameController(GameStepPerformer gameStepPerformer) {
         this.gameStepPerformer = gameStepPerformer;
 
+        System.out.println("Provide the players name (separate them with enter) : ");
         players = new Player[]{
-                new HumanPlayer("Player1"),
-                new AiPlayer("Player2")
+                new HumanPlayer(scanner.nextLine()),
+                new AiPlayer(scanner.nextLine())
         };
         players[0].setSide(players[1]);
         players[1].setSide(players[0]);
@@ -66,8 +67,9 @@ public class GameController {
             shotStatus = currentPlayer().makeShot();
             System.out.println(shotStatus);
         } while (shotStatus != ShotStatus.ALL);
-        gameStepPerformer.performGameStep();
         System.out.println(currentPlayer() + " won the battle!");
+        gameStepPerformer.performGameStep();
+
     }
 
     private Player currentPlayer() {
@@ -82,7 +84,7 @@ public class GameController {
     }
 
     private void clearScreen() {
-        range(0, 5).forEach(i -> System.out.println());
+        range(0, 3).forEach(i -> System.out.println());
     }
 
 }

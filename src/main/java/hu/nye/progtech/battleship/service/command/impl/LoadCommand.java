@@ -12,7 +12,7 @@ public class LoadCommand implements Command {
 
     private static final String LOAD_COMMAND = "load";
 
-    private GameSavesRepository gameSavesRepository;
+    private final GameSavesRepository gameSavesRepository;
 
     public LoadCommand(GameSavesRepository gameSavesRepository) {
         this.gameSavesRepository = gameSavesRepository;

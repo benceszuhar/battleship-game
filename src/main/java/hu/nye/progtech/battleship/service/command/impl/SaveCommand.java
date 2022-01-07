@@ -13,7 +13,7 @@ public class SaveCommand implements Command {
     private static final Logger LOGGER = LoggerFactory.getLogger(SaveCommand.class);
     private static final String SAVE_COMMAND = "save";
 
-    private GameSavesRepository gameSavesRepository;
+    private final GameSavesRepository gameSavesRepository;
 
     public SaveCommand(GameSavesRepository gameSavesRepository) {
         this.gameSavesRepository = gameSavesRepository;

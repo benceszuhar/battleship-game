@@ -8,6 +8,9 @@ import jakarta.xml.bind.Unmarshaller;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/**
+ * Configuration for XML related components.
+ */
 @Configuration
 public class XmlConfiguration {
 

@@ -14,7 +14,7 @@ public class PersistableMapVO {
 
     public static int WIDTH = 10;
     public static int HEIGHT = 10;
-    private static Map<IntPredicate, Integer> CHECK_CELLS = Map.of(
+    private static final Map<IntPredicate, Integer> CHECK_CELLS = Map.of(
             i -> true, 0,
             i -> i / WIDTH > 0 && i % WIDTH > 0, -WIDTH - 1,
             i -> i / WIDTH > 0, -WIDTH,

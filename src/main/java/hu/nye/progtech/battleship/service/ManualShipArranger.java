@@ -9,7 +9,7 @@ import hu.nye.progtech.battleship.model.ShipCoordinates;
 import hu.nye.progtech.battleship.model.ShipType;
 
 /**
- * ShotStatus in game.
+ * Manual ship arranger.
  */
 public class ManualShipArranger implements ShipArranger {
 

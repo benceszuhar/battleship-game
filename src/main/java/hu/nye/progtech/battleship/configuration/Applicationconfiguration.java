@@ -3,6 +3,7 @@ package hu.nye.progtech.battleship.configuration;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
+import hu.nye.progtech.battleship.model.GameState;
 import hu.nye.progtech.battleship.service.command.InputHandler;
 import hu.nye.progtech.battleship.service.game.GameController;
 import hu.nye.progtech.battleship.service.game.GameStepPerformer;
